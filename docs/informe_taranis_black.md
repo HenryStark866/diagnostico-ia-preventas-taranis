@@ -213,8 +213,8 @@ Entrega: 3 opciones de asunto (máx. 50 caracteres, sin mayúsculas sostenidas) 
 
 | Entregable | Descripción | Enlace | Captura | Nota de uso |
 |---|---|---|---|---|
-| Servicio "Diagnóstico IA de Pre-Ventas" | Webhook Pipedrive → Gemini → nota en el deal (Python/FastAPI) | [GitHub] | Nota en Pipedrive | Se activa solo al crear un deal |
-| Modo demo + 6 diagnósticos | Casos del Mock Kit y sus resultados | [GitHub/ejemplos] | Un .md | `python demo.py` |
+| Servicio "Diagnóstico IA de Pre-Ventas" | Webhook Pipedrive → Gemini → nota en el deal (Python/FastAPI) | https://github.com/HenryStark866/diagnostico-ia-preventas-taranis | Nota en Pipedrive | Se activa solo al crear un deal |
+| Modo demo + 6 diagnósticos | Casos del Mock Kit y sus resultados | https://github.com/HenryStark866/diagnostico-ia-preventas-taranis/tree/main/ejemplos | Un .md | `python demo.py` |
 | Simulador de cliente | Prompt de Carlos (LogiMax) para entrenar objeciones | [enlace ChatGPT] | Conversación | Escribir "FIN" para la evaluación |
 | Playbook de objeciones | Tabla de 5 objeciones con argumentos | Este documento | — | Consultar antes de cada llamada |
 | Video de demostración | Cómo funciona por dentro | [YouTube no listado] | — | 4–5 min |
