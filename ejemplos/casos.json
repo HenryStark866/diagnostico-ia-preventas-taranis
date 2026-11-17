@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1042",
+    "titulo": "FinCloud - 80 sillas ErgoPro Specialist",
+    "organizacion": "FinCloud Soluções (Fintech, 85 empleados, Belo Horizonte)",
+    "persona": "Mariana Silveira - Directora de RR. HH.",
+    "relato": "hola, hablé con mariana de fincloud. desde que volvieron del híbrido tienen como 80 personas quejándose de la espalda, dice que las incapacidades por columna subieron 15% el último trimestre. le mandamos propuesta con el informe NR-17 el 14/10 por 80 Specialist (~199k USD). le gusta el producto PERO dice que 25 días a BH es mucho, lo quiere en 10 días o se le cae. quedó de responder y nada todavía."
+  },
+  {
+    "id": "1043",
+    "titulo": "LogiMax - estaciones para centro de monitoreo 24/7",
+    "organizacion": "LogiMax Transportes (Logística, 260 empleados)",
+    "persona": "Carlos Eduardo Prado - Gerente de Compras",
+    "relato": "Carlos de compras otra vez pidiendo descuento. Son 12 ErgoPro Core + 12 SmartDesk Studio, como 65.880. Dice que la silla de un catálogo de la competencia cuesta 800 dólares y que quiere 25% de descuento pagando de contado porque el presupuesto del semestre es rígido. Ojo: el problema real es que los operadores de rastreo 24/7 pasan 10 horas sentados, se cansan y se van (rotación alta). Pidió contrapropuesta el 16/10."
+  },
+  {
+    "id": "1045",
+    "titulo": "Vanguarda - 110 puestos completos para devs",
+    "organizacion": "Vanguarda Softwares (SaaS, 320 empleados)",
+    "persona": "Felipe Antunes - VP de Gente y Gestión",
+    "relato": "Felipe quiere escritorios elevables y sillas como beneficio para atraer programadores senior y evitar lesiones (LER). 110 SmartDesk Pro Dual + 110 ErgoPro Specialist, ~801.900 USD. Ya le presentamos el ROI sobre rotación el 11/10 y le gustó. El problema: el CFO congeló todo el CAPEX hasta el Q1. Felipe preguntó si se puede en 12 cuotas sin interés o algo tipo 'as a service'. Está en nutrición."
+  },
+  {
+    "id": "1050",
+    "titulo": "Atlas Manufatura - informe ABERGO urgente",
+    "organizacion": "Atlas Manufatura Inteligente (Industria 4.0, 580 empleados)",
+    "persona": "Ing. Marcelo Tavares - Gerente EHS (Seguridad)",
+    "relato": "Les cayó la inspección del trabajo al área de ingeniería y planeación, tienen 30 DÍAS para presentar informe técnico ABERGO o les ponen una multa pesada. Marcelo (EHS) nos quiere a nosotros: 90 ErgoPro Specialist, 224.100 USD. Pero Compras quiere seguir con el proveedor de siempre que gana las subastas por precio, y ese no tiene informe ergonómico. Están esperando decisión, el vendedor habla con Marcelo."
+  },
+  {
+    "id": "1059",
+    "titulo": "Aurora Cosméticos - nueva sede Wellbeing",
+    "organizacion": "Aurora Cosméticos Naturais (Belleza, 190 empleados)",
+    "persona": "Juliana Paes Leme - Gerente de Instalaciones",
+    "relato": "se mudan a edificio nuevo concepto wellbeing. quieren 50 Specialist + 2 Silence Quad (~180.500). piden sellos ergonómicos internacionales, madera clara de reforestación en las mesas y ruedas especiales para piso de cemento pulido, que todo vaya con la marca. ya les mandamos muestras de ruedas y laminados el 16/10."
+  },
+  {
+    "id": "borde-sin-relato",
+    "titulo": "Hub Criativo - 20 SmartDesk Pro Dual",
+    "organizacion": "Hub Criativo Comunicação",
+    "persona": "Bia Arantes",
+    "relato": ""
+  }
+]
