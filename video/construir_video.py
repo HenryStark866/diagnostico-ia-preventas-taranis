@@ -55,6 +55,9 @@ td:first-child{color:#e8a33d;width:42%}
 .caja.d{border-color:#e8a33d}
 .fl{font-size:44px;color:#e8a33d}
 .nota{margin-top:70px;font-size:32px;color:#aab2bf;line-height:1.6}
+.caps{display:flex;gap:30px;height:620px}
+.cap{flex:1;border-radius:16px;overflow:hidden;border:2px solid #e8a33d;background:#fff}
+.cap img{width:100%;height:100%;object-fit:contain}
 .portada{display:flex;flex-direction:column;justify-content:center;height:100%}
 .portada h1{font-size:104px}.portada p{font-size:40px;color:#aab2bf}
 """
@@ -98,6 +101,11 @@ def _html(e: dict) -> str:
         cuerpo = cab + f'<div class="flujo">{fila}</div>' + (
             '<div class="nota">↩ El diagnóstico vuelve a Pipedrive como <b>nota fijada</b> en el mismo deal '
             '(POST /api/v1/notes).<br>Sin relato → no se llama a la IA: nota «Diagnóstico no generado».</div>')
+    elif t == "capturas":
+        carpeta = RAIZ / "capturas"
+        imgs = "".join(
+            f'<div class="cap"><img src="{(carpeta / n).as_uri()}"></div>' for n in e["imagenes"])
+        cuerpo = cab.replace("<h1>", '<h1 style="margin-bottom:34px">') + f'<div class="caps">{imgs}</div>'
     else:
         raise ValueError(t)
     return f'<!doctype html><meta charset="utf-8"><style>{CSS}</style><body>{cuerpo}{_pie() if t != "portada" else _pie()}</body>'
@@ -120,10 +128,22 @@ def main() -> None:
         pagina = TRABAJO / "html" / f"{e['id']}.html"
         pagina.write_text(_html(e), encoding="utf-8")
         png = TRABAJO / "png" / f"{e['id']}.png"
-        subprocess.run([EDGE, "--headless=new", "--disable-gpu", "--hide-scrollbars",
-                        f"--user-data-dir={perfil}", "--force-device-scale-factor=1",
-                        "--window-size=1920,1080", f"--screenshot={png}", pagina.as_uri()],
-                       check=True, capture_output=True)
+        for intento in range(3):  # Edge headless a veces se cuelga: límite de 60 s y reintento
+            try:
+                subprocess.run([EDGE, "--headless=new", "--disable-gpu", "--hide-scrollbars",
+                                f"--user-data-dir={perfil}", "--force-device-scale-factor=1",
+                                "--allow-file-access-from-files",
+                                "--window-size=1920,1080", f"--screenshot={png}", pagina.as_uri()],
+                               check=True, capture_output=True, timeout=60)
+                break
+            except subprocess.TimeoutExpired:
+                print(f"  Edge no respondió; reintento {intento + 1}/3")
+                subprocess.run(["powershell", "-NoProfile", "-Command",
+                                "Get-CimInstance Win32_Process -Filter \"Name='msedge.exe'\" | "
+                                "Where-Object { $_.CommandLine -like '*edge_perfil*' } | "
+                                "ForEach-Object { Stop-Process -Id $_.ProcessId -Force }"])
+        else:
+            raise SystemExit(f"Edge no pudo capturar {pagina.name}")
         dur = _duracion(wav) + PAUSA_INICIO + PAUSA_FIN
         clip = TRABAJO / "clips" / f"{e['id']}.mp4"
         retraso = int(PAUSA_INICIO * 1000)

@@ -196,6 +196,17 @@ ESCENAS = [
         ),
     },
     {
+        "id": "10b_en_vivo", "tipo": "capturas",
+        "titulo": "En vivo: Pipedrive real",
+        "imagenes": ["pipedrive_1.jpg", "pipedrive_2.jpg"],
+        "narracion": (
+            "Y esto no es una simulación. Esta es mi cuenta real de Pipedrive. "
+            "Creé el negocio de LogiMax, Pipedrive disparó el webhook, y en menos de un minuto apareció el diagnóstico, "
+            "fijado arriba de todo, en la sección Focus del negocio: resumen, necesidad, urgencia alta con treinta y dos días sin contacto, "
+            "y la solución con los precios exactos del catálogo."
+        ),
+    },
+    {
         "id": "11_aprendizajes", "tipo": "puntos",
         "titulo": "Cómo se construyó: decisiones verificadas",
         "puntos": [
