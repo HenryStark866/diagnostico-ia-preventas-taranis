@@ -48,9 +48,9 @@ Challenge, `Plantilla_Ruta_1_ventas_ES` y actividad de entrega). Plazo oficial: 
 |---|---|
 | Webhook FastAPI `create.deal` | ✅ probado contra Pipedrive simulado |
 | Gemini con rol de Pre-Ventas y secciones fijas | ✅ probado con Gemini real |
-| Nota en el deal vía API | ✅ simulado · ⬜ cuenta real (faltan credenciales en `.env`) |
+| Nota en el deal vía API | ✅ simulado y ✅ cuenta real (deals #1, #2, #3) |
 | Modo demo con JSON → Markdown | ✅ 6 casos |
 | Errores: sin descripción, Gemini, 429, duplicado | ✅ |
 | `.env.example`, `.env` en `.gitignore`, claves nunca impresas | ✅ |
 | README con Mermaid, ejecución, ejemplos, mejoras | ✅ |
-| Exposición con ngrok y registro del webhook | ✅ documentado · ⬜ probado en vivo |
+| Exposición pública y registro del webhook | ✅ probado en vivo con Cloudflare Tunnel (ngrok documentado) |

@@ -138,6 +138,14 @@ python registrar_webhook.py https://xxxx.ngrok-free.app
 python registrar_webhook.py --listar
 ```
 
+**Alternativa sin cuenta (la que se usó en la prueba en vivo):** Cloudflare Quick Tunnel.
+
+```powershell
+winget install Cloudflare.cloudflared
+cloudflared tunnel --url http://127.0.0.1:8000     # muestra una URL https://xxxx.trycloudflare.com
+python registrar_webhook.py https://xxxx.trycloudflare.com
+```
+
 También se puede registrar a mano: Pipedrive → *Herramientas y apps* → *Webhooks* → *Crear nuevo*:
 evento **create.deal**, URL `https://xxxx.ngrok-free.app/webhook/pipedrive`.
 
@@ -178,6 +186,12 @@ ALTA
 ```
 
 Los 6 casos (5 objeciones distintas + 1 caso borde sin relato) están en [`ejemplos/`](ejemplos/).
+
+### Prueba en vivo con Pipedrive real (17/11/2026)
+
+`python pruebas/crear_deals_prueba.py 1043 1050 borde-sin-relato` creó 3 deals en una cuenta real.
+Pipedrive envió 3 webhooks `create.deal` (200 OK) y en ~40 s aparecieron en el CRM:
+2 diagnósticos fijados en *Focus* (LogiMax y Atlas) y 1 aviso «Diagnóstico no generado» (Hub Criativo).
 
 ## 6. Decisiones técnicas (verificadas en la documentación oficial)
 

@@ -13,7 +13,9 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
 
 PIPEDRIVE_API_TOKEN = os.getenv("PIPEDRIVE_API_TOKEN", "")
-PIPEDRIVE_DOMAIN = os.getenv("PIPEDRIVE_DOMAIN", "")
+# Aceptamos "miempresa", "miempresa.pipedrive.com" o "https://miempresa.pipedrive.com/".
+PIPEDRIVE_DOMAIN = (os.getenv("PIPEDRIVE_DOMAIN", "").strip().removeprefix("https://")
+                    .removeprefix("http://").split("/")[0].removesuffix(".pipedrive.com"))
 
 WEBHOOK_USER = os.getenv("WEBHOOK_USER", "")
 WEBHOOK_PASSWORD = os.getenv("WEBHOOK_PASSWORD", "")
