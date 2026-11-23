@@ -3,6 +3,7 @@
 Uso:  python docs/llenar_plantilla.py <plantilla.docx> <salida.docx>
 Mantiene el diseño de la plantilla: solo reemplaza el texto guía de cada celda.
 """
+import os
 import sys
 from pathlib import Path
 
@@ -202,7 +203,8 @@ def main(plantilla: str, salida: str) -> None:
     d = docx.Document(plantilla)
     t = d.tables
     poner(t[2].rows[0].cells[1], "Henry Camilo Taborda Galeano")
-    poner(t[2].rows[1].cells[1], "[correo]")
+    # El correo no se guarda en el repositorio: se pasa por variable de entorno.
+    poner(t[2].rows[1].cells[1], os.environ.get("CORREO_ESTUDIANTE", "[correo]"))
     for p in t[3].rows[0].cells[0].paragraphs:
         for r in p.runs:
             if "Ruta 1" in p.text and "[ ]" in r.text:

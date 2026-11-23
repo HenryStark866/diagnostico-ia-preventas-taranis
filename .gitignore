@@ -5,3 +5,4 @@ __pycache__/
 eventos_procesados.json
 video/trabajo/
 *.log
+docs/*.docx
